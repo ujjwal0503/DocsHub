@@ -9,6 +9,13 @@ var usersRouter = require('./routes/users');
 
 var cors = require("cors");
 var app = express();
+app.use(cors(
+  {
+    origin: ["https://docs-hub-api.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
